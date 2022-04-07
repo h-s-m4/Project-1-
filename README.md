@@ -10,11 +10,11 @@ The files in this repository were used to configure the network depicted below.
  
 These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
 
-  - [install-elk.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/install-elk.yml)
-  - [filebeat-config.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/filebeat-config.yml)
-  - [filebeat-playbook.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/filebeat-playbook.yml)
-  - [metricbeat-config.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/metricbeat-config.yml)
-  - [metricbeat-playbook.yml](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Ansible/metricbeat-playbook.yml)
+  - [install-elk.yml](https://github.com/hibo-m/Project-1-/blob/9b1d15408e49b66f4cea67af76594050cc59dad0/configfiles/elk.yml)
+  - [filebeat-config.yml](https://github.com/hibo-m/Project-1-/blob/9b1d15408e49b66f4cea67af76594050cc59dad0/configfiles/filebeat-configuration.yml)
+  - [filebeat-playbook.yml](https://github.com/hibo-m/Project-1-/blob/9b1d15408e49b66f4cea67af76594050cc59dad0/configfiles/filebeat-playbook.yml)
+  - [metricbeat-config.yml](https://github.com/hibo-m/Project-1-/blob/9b1d15408e49b66f4cea67af76594050cc59dad0/configfiles/metricbeat-configuration.yml)
+  - [metricbeat-playbook.yml](https://github.com/hibo-m/Project-1-/blob/9b1d15408e49b66f4cea67af76594050cc59dad0/configfiles/metricbeat-playbook.yml)
  
 This document contains the following details:
 - Description of the Topology
