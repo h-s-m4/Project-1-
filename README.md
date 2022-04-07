@@ -7,7 +7,7 @@
  
 The files in this repository were used to configure the network depicted below.
 
-![vNet Diagram](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Diagrams/ELK-Project-V1.jpg)
+![vNet Diagram](https://github.com/hibo-m/Project-1-/blob/0dd7876ea6dcb8059acff1cedf68c5be99fb7f54/hmk%2013.PNG)
  
 These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
 
