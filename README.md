@@ -60,10 +60,10 @@ The configuration details of each machine may be found below.
  
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump-Box-Provisioner | Gateway  | 44.77.55.33 ; 10.0.0.4   | Linux            |
+| Jump-Box-Provisioner | Gateway  | 20.239.61.30 , 10.0.0.8   | Linux            |
 | Web-1        |webserver    | 10.0.0.9     | Linux            |
 | Web-2        |webserver    | 10.0.0.10     | Linux            |
-| ELKServer    |Kibana       | 10.2.0.4 ;  20.222.15.169    | Linux            |
+| ELKServer    |Kibana       | 10.2.0.4 ,  20.222.15.169    | Linux            |
 | RedTeam-LB|Load Balancer| 52.175.127.15| DVWA            |
  
 In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability zones: Web-1 + Web-2
@@ -79,8 +79,8 @@ A summary of the access policies in place can be found in the table below.
  
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump-Box-Provisioner | Yes                 | 99.245.112.43       |
-| ELKServer      | Yes                  |  99.245.112.43:5601        |
+| Jump-Box-Provisioner | Yes      | 99.245.112.43       |
+| ELKServer      | Yes            |  99.245.112.43:5601        |
 | DVWA 1   | No                  |  10.0.0.1-254        |
 | DVWA 2   | No                  |  10.0.0.1-254        |
 
