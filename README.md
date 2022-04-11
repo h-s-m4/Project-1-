@@ -124,9 +124,9 @@ We will configure an ELK server within virtual network. Specifically,
 - Choose our original RedTeam vNet in the dropdown labeled `Virtual Network`.
 - Leave all other settings at their defaults.
  
-![PeeringsELKtoRed](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/ELKtoRed.png) 
+![PeeringsELKtoRed](https://github.com/hibo-m/Project-1-/blob/main/elk%20peerings.png) 
  
-![PeeringsRedtoELK](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/RedtoELK.png)  
+![PeeringsRedtoELK](https://github.com/hibo-m/Project-1-/blob/main/redteam%20peerings.PNG)  
 
 3. Create a new Ubuntu VM in our virtual network with the following configurations:
 - The VM must have a public IP address.
