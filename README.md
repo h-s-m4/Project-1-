@@ -124,7 +124,7 @@ We will configure an ELK server within virtual network. Specifically,
 - Choose our original RedTeam vNet in the dropdown labeled `Virtual Network`.
 - Leave all other settings at their defaults.
  
-![PeeringsELKtoRed](https://github.com/hibo-m/Project-1-/blob/main/elk%20peerings.png) 
+![PeeringsELKtoRed](https://github.com/hibo-m/Project-1-/blob/main/elk%20peerings.PNG) 
  
 ![PeeringsRedtoELK](https://github.com/hibo-m/Project-1-/blob/main/redteam%20peerings.PNG)  
 
