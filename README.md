@@ -291,8 +291,8 @@ Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kiba
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-- Web-1 (DVWA 1) | 10.0.0.5
-- Web-2 (DVWA 2) | 10.0.0.6
+- Web-1 (DVWA 1) | 10.0.0.9
+- Web-2 (DVWA 2) | 10.0.0.10
 
 I have installed the following Beats on these machines:
 
