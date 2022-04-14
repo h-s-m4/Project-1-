@@ -270,7 +270,7 @@ then ```curl http://localhost:5601/app/kibana``` does return HTML.
 
 The following screenshot displays the result of running `curl` after start ELK container
 
-![Docker curl output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/CurlResult.png)
+![Docker curl output](https://github.com/hibo-m/Project-1-/blob/main/elk%20curl%20kibana.PNG)
 
 #### Restricted access to the new server.
 	
