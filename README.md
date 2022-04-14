@@ -259,7 +259,7 @@ SSH to our container: ```ssh azureuser@10.2.0.4``` and RUN ```sudo docker ps```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the Elastic Stack instance.
 
-![Docker InstallELK output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/InstallELK.png)
+![Docker InstallELK output](https://github.com/hibo-m/Project-1-/blob/main/docker%20ps.PNG)
 
 Logging into the Elk server and manually launch the ELK container with: 
 
