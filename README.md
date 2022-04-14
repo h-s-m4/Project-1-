@@ -162,32 +162,20 @@ In this step, we have to:
  
  The playbook implements the following tasks:
 
-```yaml
 ---
-- name: Configure Elk VM with Docker
-  hosts: elk
-  remote_user: sysadmin
+- - name: Configure Elk VM with Docker
+  hosts: elkservers
+  remote_user: azureserver
   become: true
   tasks:
+    
 ```
- 
-In this play, the ansible package manager module is tasked with installing docker.io. The keyword 'update_cache:' is set to "yes" to download package information from all configured sources and their dependencies prior to installing docker, it is necessary to successfully install docker in this case. Next the keyword 'state:' is set to "present" to verify that the package is installed.
 
-
-```yaml
-     # Use apt module
-    - name: Install docker.io
-      apt:
-        update_cache: yes
-        name: docker.io
-        state: present
-```
 
 In this play, the ansible package manager module is tasked with installing  'pip3', a version of the 'pip installer' which is a standard package manager used to install and maintain packages for Python.
 The keyword 'force_apt_get:' is set to "yes" to force usage of apt-get instead of aptitude. The keyword 'state:' is set to "present" to verify that the package is installed.
 
-```yaml
-      # Use apt module
+ # Use apt module
     - name: Install pip3
       apt:
         force_apt_get: yes
