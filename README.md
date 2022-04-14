@@ -278,7 +278,7 @@ This step is to restrict access to the ELK VM using Azure's network security gro
 
 Go to Network Security Group to config our host IP to Kibana as follow
 
-![Docker InboundSecRules output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Docker%20InboundSecRules%20output.png)
+![Docker InboundSecRules output](https://github.com/hibo-m/Project-1-/blob/main/access%20from%20home.PNG)
 
 Then try to access web browser to http://<your.ELK-VM.External.IP>:5601/app/kibana 
  
