@@ -255,7 +255,7 @@ The following screenshot displays the result of running `elk.yml`
 
 ![Docker ELKResult output](https://github.com/hibo-m/Project-1-/blob/main/ansible%20playbook.PNG)
 
-SSH to our container: ```ssh sysadmin@10.2.0.4``` and RUN ```sudo docker ps```
+SSH to our container: ```ssh azureuser@10.2.0.4``` and RUN ```sudo docker ps```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the Elastic Stack instance.
 
