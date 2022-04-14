@@ -189,16 +189,16 @@ The keyword 'force_apt_get:' is set to "yes" to force usage of apt-get instead o
 In this play the pip installer is used to install docker and also verify afterwards that docker is installed ('state: present').
 
 ```yaml
-      # Use pip module
+      # Use apt module
     - name: Install pip3
-	apt:
+      apt:
         force_apt_get: yes
         name: python3-pip
         state: present
 ```
 	
 ```yaml
-	# Use pip module
+     # Use pip module
     - name: Install Docker python module
       pip:
         name: docker
