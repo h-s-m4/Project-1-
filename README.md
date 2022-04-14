@@ -248,12 +248,12 @@ In this play, the ansible systemd module is used to start docker on boot, settin
 Now we can start launching and exposing the container by run
 
 ```bash
-ansible-playbook install-elk.yml
+ansible-playbook elk.yml
 ```
 
-The following screenshot displays the result of running `install-elk.yml`
+The following screenshot displays the result of running `elk.yml`
 
-![Docker ELKResult output](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Install_elk_result.png)
+![Docker ELKResult output](https://github.com/hibo-m/Project-1-/blob/main/ansible%20playbook.PNG)
 
 SSH to our container: ```ssh sysadmin@10.1.0.4``` and RUN ```sudo docker ps```
 
