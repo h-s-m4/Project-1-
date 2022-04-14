@@ -163,36 +163,48 @@ In this step, we have to:
  The playbook implements the following tasks:
 
 ---
-- - name: Configure Elk VM with Docker
+    
+```yaml
+---
+- name: Configure Elk VM with Docker
   hosts: elkservers
   remote_user: azureserver
   become: true
   tasks:
-    
 ```
-
 
 In this play, the ansible package manager module is tasked with installing  'pip3', a version of the 'pip installer' which is a standard package manager used to install and maintain packages for Python.
 The keyword 'force_apt_get:' is set to "yes" to force usage of apt-get instead of aptitude. The keyword 'state:' is set to "present" to verify that the package is installed.
 
- # Use apt module
-    - name: Install pip3
+ 
+```yaml
+     # Use apt module
+    - name: Install docker.io
       apt:
-        force_apt_get: yes
-        name: python3-pip
+        update_cache: yes
+        name: docker.io
         state: present
 ```
-
+	
 In this play the pip installer is used to install docker and also verify afterwards that docker is installed ('state: present').
 
 ```yaml
       # Use pip module
+    - name: Install pip3
+	apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+```
+	
+```yaml
+	# Use pip module
     - name: Install Docker python module
       pip:
         name: docker
         state: present
-```
-
+```	
+	
 In this play, the ansible sysctl module configures the target virtual machine (i.e., the Elk server VM) to use more memory. On newer version of Elasticsearch, the max virtual memory areas is likely to be too low by default (ie., 65530) and will result in the following error: "elasticsearch | max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]", thus requiring the increase of vm.max_map_count to at least 262144 using the sysctl module (keyword 'value:' set to "262144"). The keyword 'state:' is set to "present" to verify that the change was applied. The sysctl command is used to modify Linux kernel variables at runtime, to apply the changes to the virtual memory variables, the new variables need to be reloaded so the keyword 'reload:' is set to "yes" (this is also necessary in case the VM has been restarted).
 
 ```yaml
