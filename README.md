@@ -659,10 +659,4 @@ My Elastic Stack server is now functioning and correctly monitoring my load-bala
 
 ---
 
-#### Special thanks:
-
-© Trilogy Education Services, a 2U, Inc., Instructor Jerry Arnold and TAs; Matt McNew, Jansen Russell, Micheal Stephenson.
-
-© The University of Texas at Austin Boot Camp, The Cybersecurity program.
-
 ---
