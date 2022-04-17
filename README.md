@@ -569,7 +569,7 @@ This time we will generate a high amount of web requests directed to one of my w
 3. Run the following command to download the file `index.html` from Web-1 VM:
 
    - ```bash
-        wget 10.0.0.5
+        wget 10.0.0.9
      ```
 
 Output of the command:
