@@ -332,35 +332,35 @@ RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Fileb
 
 ```yaml
 ---
-- name: Install and Launch Filebeat
+- name: Installing and Launch Filebeat
   hosts: webservers
   become: yes
   tasks:
     # Use command module
   - name: Download filebeat .deb file
     command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+
     # Use command module
   - name: Install filebeat .deb
     command: dpkg -i filebeat-7.4.0-amd64.deb
+
     # Use copy module
   - name: Drop in filebeat.yml
     copy:
-      src: /etc/ansible/roles/install-filebeat/files/filebeat-config.yml
+      src: /etc/ansible/files/filebeat-config.yml
       dest: /etc/filebeat/filebeat.yml
+
     # Use command module
   - name: Enable and Configure System Module
     command: filebeat modules enable system
+
     # Use command module
   - name: Setup filebeat
     command: filebeat setup
+
     # Use command module
   - name: Start filebeat service
     command: service filebeat start
-    # Use systemd module
-  - name: Enable service filebeat on boot
-    systemd:
-      name: filebeat
-      enabled: yes
 
 ```
 
