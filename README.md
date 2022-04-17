@@ -588,7 +588,7 @@ Output of the command:
 5. Next, run the `wget` command in a loop to generate a very high number of web requests, I will use the `while` loop:
 
    - ```bash
-        while true; do wget 10.0.0.5; done
+        while true; do wget 10.0.0.9; done
      ```
 
 The result is that the `Load`, `Memory Usage` and `Network Traffic` were hit as seen below:
