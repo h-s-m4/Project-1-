@@ -453,7 +453,7 @@ To do so I used the following short script to automate 1000 failed SSH login att
 
 
 ```bash
-for i in {1..1000}; do ssh Web_1@10.0.0.5; done
+for i in {1..1000}; do ssh Web_1@10.0.0.9; done
 ```
 
 ![ssh failed attempts](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/ssh%20failed%20attempts.png)
@@ -478,7 +478,7 @@ I can see that all the failed attempts were detected and sent to Kibana.
 
    - `do` indicates the action taken by each loop.
 
-   - `ssh sysadmin@10.0.0.5` is the command run by `do`.
+   - `ssh sysadmin@10.0.0.9` is the command run by `do`.
 
    - `;` separates the portions of our for loop when it's written on one line.
 
@@ -506,7 +506,7 @@ while true; do for i in {5..6}; do ssh Web_1@10.0.0.$i; done
 
    - `{5..6}` creates a list of numbers (5 and 6), each of which will be given to our `i` variable.
 
-   - `ssh sysadmin@10.0.0.$i` is the command run by `do`. It is passing in the `$i` variable so the `wget` command will be run on each server, i.e., 10.0.0.5, 10.0.0.6 (Web-1, Web-2).
+   - `ssh sysadmin@10.0.0.$i` is the command run by `do`. It is passing in the `$i` variable so the `wget` command will be run on each server, i.e., 10.0.0.9, 10.0.0.10 (Web-1, Web-2).
 
 
 Next, I want to confirm that `metricbeat` is functioning. To do so I will run a linux stress test.
@@ -524,7 +524,7 @@ sudo docker start goofy_wright && sudo docker attach goofy_wright
 2. Then, SSH from my Ansible container to Web-1.
 
 ```bash
-ssh sysadmin@10.0.0.5
+ssh sysadmin@10.0.0.9
 ```
 
 3. Install the `stress` module with the following command:
