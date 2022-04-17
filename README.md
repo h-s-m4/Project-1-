@@ -79,8 +79,8 @@ A summary of the access policies in place can be found in the table below.
  
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump-Box-Provisioner | Yes      | 99.245.112.43       |
-| ELKServer      | Yes            |  99.245.112.43:5601        |
+| Jump-Box-Provisioner | Yes      | Private IP       |
+| ELKServer      | Yes            | Private IP:5601        |
 | DVWA 1   | No                  |  10.0.0.1-254        |
 | DVWA 2   | No                  |  10.0.0.1-254        |
 
