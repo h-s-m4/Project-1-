@@ -621,7 +621,7 @@ I use the following command to do that:
 
 
 ```bash
-while true; do wget 10.0.0.5 -O /dev/null; done
+while true; do wget 10.0.0.9 -O /dev/null; done
 ```
 
 Now, if I want to perform the `wget` DoS request on all my web servers, I can use the previous command I used to generate failed SSH login attempts on all my web servers, but this time I will tweak the command to send `wget` requests to all webservers:
