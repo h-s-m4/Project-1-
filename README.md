@@ -77,10 +77,17 @@ A summary of the access policies in place can be found in the table below.
 
 ### ELK Configuration
  
-Ansible was used to automate the configuration of the ELK server. No configuration was performed manually, which is advantageous because Ansible can be used to easily configure new machines, update programs, and configurations on hundreds of servers at once, and the best part is that the process is the same whether we're managing one machine or dozens and even hundreds.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-> What is the main advantage of automating configuration with Ansible?
-- Ansible is focusing on bringing a server to a certain state of operation.
+>You don’t need to install any other software or firewall ports on the client systems you want to automate. You also don’t have to set up a separate management structure.
+					     
+>The playbook implements the following tasks:
+
+-Install Docker
+-Download Image
+-Configure container
+-Create playbook to install container with docker and Filebeat and Metricbeat.
+-Run playbook to launch the container
 
 <details>
 <summary> <b> Click here to view ELK Configuration. </b> </summary>
