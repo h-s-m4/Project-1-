@@ -47,8 +47,6 @@ The configuration details of each machine may be found below.
 | Web-2        |webserver    | 10.0.0.10     | Linux            |
 | ELKServer    |Kibana       | 10.2.0.4 ,  20.222.15.169    | Linux            |
 | RedTeam-LB|Load Balancer| 52.175.127.15| DVWA            |
- 
-In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability zones: Web-1 + Web-2
 
 
 ### Access Policies
