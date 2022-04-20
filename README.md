@@ -30,31 +30,11 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 
-> What aspect of security do load balancers protect?
-- According to [Azure security baseline for Azure Load Balancer](https://bit.ly/3AnSRPV), the load balancer's main purpose is to distribute web traffic across multiple servers. In our network, the load balancer was installed in front of the VM to 
-   - protect Azure resources within virtual networks.
-   - monitor and log the configuration and traffic of virtual networks, subnets, and NICs.
-   - protect critical web applications
-   - deny communications with known malicious IP addresses
-   - record network packets
-   - deploy network-based intrusion detection/intrusion prevention systems (IDS/IPS)
-   - manage traffic to web applications
-   - minimize complexity and administrative overhead of network security rules
-   - maintain standard security configurations for network devices
-   - document traffic configuration rules
-   - use automated tools to monitor network resource configurations and detect changes
+>Load balancing ensures that the application will be highly reliable, in addition to restricting access to the network.
 
-
-> What is the advantage of a jump box?
-- A Jump Box or a "Jump Server" is a gateway on a network used to access and manage devices in different security zones. A Jump Box acts as a "bridge" between two trusted networks zones and provides a controlled way to access them. We can block the public IP address associated with the VM. It helps to improve security also prevents all Azure VM’s to expose to the public.
-
-Integrating an Elastic Stack server allows us to easily monitor the vulnerable VMs for changes to their file systems and system metrics such as privilege escalation failures, SSH logins activity, CPU and memory usage, etc.
-
-> What does Filebeat watch for?
-- Filebeat helps keep things simple by offering a lightweight way (low memory footprint) to forward and centralize logs, files and watches for changes.
-
-> What does Metricbeat record?
-- Metricbeat helps monitor servers by collecting metrics from the system and services running on the server so it records machine metrics and stats, such as uptime.
+Load Balancers protect against DoS attacks. The advantage of the jump box is that it restricts access to one administrator. Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the actual machines and system logs.
+Filebeat helps generate and organize log files to send to Logstash and Elasticsearch. Specifically, it logs information about the file system, including which files have changed and when.
+Metricbeat is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
  
