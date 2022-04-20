@@ -55,10 +55,11 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-20.239.61.30 - my personal machine.
-Machines within the network can only be accessed by accessing the DVWA container in the Jump Box VM.
+>20.239.61.30 - my personal machine.
 
-The only machines that can access the ELK server are 20.239.61.30 - my personal machine, and the Jump Box VM at IP 10.0.0.8 through a peering connection.
+>Machines within the network can only be accessed by accessing the DVWA container in the Jump Box VM.
+
+>The only machines that can access the ELK server are 20.239.61.30 - my personal machine, and the Jump Box VM at IP 10.0.0.8 through a peering connection.
  
 A summary of the access policies in place can be found in the table below.
  
