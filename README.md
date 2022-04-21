@@ -447,89 +447,9 @@ Next, I want to verify that `filebeat` and `metricbeat` are actually collecting 
    
 
 
-This time we will generate a high amount of web requests directed to one of my web servers. To do so, I will use `wget` to launch a DoS attack.
-
-1. Log into my Jump Box Provisioner
-	
-   - ```bash
-        ssh sysadmin@<jump-box-provisioner>
-     ``` 
-
-2. We need to add a new firewall rule to allow my Jump Box (10.0.0.8) to connect to my web servers over HTTP on port 80. To do so, I add a new Inbound Security Rule to Red-Team Network Security Group:
-
-![jump to http to webservers](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/jump%20to%20http%20to%20webservers.png)
 
 
-3. Run the following command to download the file `index.html` from Web-1 VM:
 
-   - ```bash
-        wget 10.0.0.9
-     ```
-
-Output of the command:
-
-![index html download](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/index%20html%20download.png)
-
-
-4. Confirm that the file has been downloaded with the `ls` command:
-
-
-   - ```bash
-        sysadmin@Jump-Box-Provisioner:~$ ls 
-        index.html
-     ```
-
-5. Next, run the `wget` command in a loop to generate a very high number of web requests, I will use the `while` loop:
-
-   - ```bash
-        while true; do wget 10.0.0.9; done
-     ```
-
-The result is that the `Load`, `Memory Usage` and `Network Traffic` were hit as seen below:
-
-![load increase DoS](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/load%20increase%20DoS.png)
-
-After stopping the `wget` command, I can see that thousands of index.html files were created (as seen below).
-
-
-![index html files](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/index%20html%20files.png)
-
-
-I can use the following command to clean that up:
-
-```bash
-rm *
-```
-
-Now if we use `ls` again, the directory is a lot cleaner:
-
-
-![directory cleanup](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/directory%20cleanup.png)
-
-
-I can also avoid the creation of the `index.html` file by adding the flag `-O` to my command so that I can specify a destination file where all the `index.html` files will be concatenated and written to.
-
-Since I don't want to save the `index.html` files, I will not write them to any output file but instead send them directly to a directory that doesn't save anything, i.e., `/dev/null`. 
-
-I use the following command to do that:
-
-
-```bash
-while true; do wget 10.0.0.9 -O /dev/null; done
-```
-
-Now, if I want to perform the `wget` DoS request on all my web servers, I can use the previous command I used to generate failed SSH login attempts on all my web servers, but this time I will tweak the command to send `wget` requests to all webservers:
-
-```bash
-while true; do for i in {5..6}; do wget -O /dev/null 10.0.0.$i; done
-```
-
-Note that we need to press CTRL + C to stop the `wget` requests since I am using the `while` loop.
-
-
-My Elastic Stack server is now functioning and correctly monitoring my load-balanced exposed DVWA web application.
-
-</details>
 
 ---
 
