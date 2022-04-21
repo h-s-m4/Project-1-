@@ -430,125 +430,22 @@ Verify that this playbook is completed by navigate back to the Filebeat installa
 
 Next, I want to verify that `filebeat` and `metricbeat` are actually collecting the data they are supposed to and that my deployment is fully functioning.
 
-To do so, I have implemented 3 tasks:
-
-1. Generate a high amount of failed SSH login attempts and verify that Kibana is picking up this activity.
-2. Generate a high amount of CPU usage on my web servers and verify that Kibana picks up this data.
-3. Generate a high amount of web requests to my web servers and make sure that Kibana is picking them up.
-	
-<details>
-<summary> <b> Click here to view Using the Playbook. </b> </summary>
 
 ---
 
 
-#### Generating a high amount of failed SSH login attempts:
-
-To generate these attempts I intentionally tried to connect to my Web-1 web server from the Jump Box instead of connecting from my Ansible container in order to generate failed attempts (the server can't verify my private key outside of the container). All ELK Stack scripts refer to [Elk_Stack_scripts.sh](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Linux/Elk_Stack_scripts.sh)
-
-To do so I used the following short script to automate 1000 failed SSH login attempts: 
 
 
-```bash
-for i in {1..1000}; do ssh Web_1@10.0.0.9; done
-```
-
-![ssh failed attempts](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/ssh%20failed%20attempts.png)
 
 
-Next We check Kibana to see if the failed attempts were logged:
 
 
-![filebeat failed ssh attempts](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/filebeat%20failed%20ssh%20attempts.png)
 
-I can see that all the failed attempts were detected and sent to Kibana.
+- 
+  .
 
-- Now Let's breakdown the syntax of my previous short script:
+   
 
-   - `for` begins the `for` loop.
-
-   - `i in` creates a variable named `i` that will hold each number `in` our list.
-
-   - `{1..1000}` creates a list of 1000 numbers, each of which will be given to our `i` variable.
-
-   - `;` separates the portions of our `for` loop when written on one line.
-
-   - `do` indicates the action taken by each loop.
-
-   - `ssh sysadmin@10.0.0.9` is the command run by `do`.
-
-   - `;` separates the portions of our for loop when it's written on one line.
-
-   - `done` closes the `for` loop.
-
-- Now I can run the same short script command with a few modifications, to test that `filebeat` is logging all failed attempts on all web servers where `filebeat` was deployed.
-
-I want to run a command that will attempt to SSH into multiple web servers at the same time and continue forever until I stop it:
-
-```bash
-while true; do for i in {5..6}; do ssh Web_1@10.0.0.$i; done
-```
-
-- Now let's breakdown the syntax of my previous short script:
-
-   - `while` begins the `while` loop.
-
-   - `true` will always be equal to `true` so this loop will never stop, unless we force quit it.
-
-   - `;` separates the portions of our `while` loop when it's written on one line.
-
-   - `do` indicates the action taken by each loop.
-
-   - `i in` creates a variable named `i` that will hold each number in our list.
-
-   - `{5..6}` creates a list of numbers (5 and 6), each of which will be given to our `i` variable.
-
-   - `ssh sysadmin@10.0.0.$i` is the command run by `do`. It is passing in the `$i` variable so the `wget` command will be run on each server, i.e., 10.0.0.9, 10.0.0.10 (Web-1, Web-2).
-
-
-Next, I want to confirm that `metricbeat` is functioning. To do so I will run a linux stress test.
-
-
-#### Generating a high amount of CPU usage on my web servers (Web-1, Web-2) and confirming that Kibana is collecting the data.
-
-
-1. From my Jump Box, I start my Ansible container with the following command:
-
-```bash
-sudo docker start goofy_wright && sudo docker attach goofy_wright
-```
-
-2. Then, SSH from my Ansible container to Web-1.
-
-```bash
-ssh sysadmin@10.0.0.9
-```
-
-3. Install the `stress` module with the following command:
-
-```bash
-sudo apt install stress
-```
-
-4. Run the service with the following command and let the stress test run for a few minutes:
-
-```bash
-sudo stress --cpu 1
-```
-
-   - _Note: The stress program will run until we quit with Ctrl+C._
-	
-Next, view the Metrics page for that VM in Kibana and comparing 2 of web servers to see the differences in CPU usage, confirmed that `metricbeat` is capturing the increase in CPU usage due to our stress command:
-
-![cpu stress test results](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/cpu%20stress%20test%20results.png)
-
-
-Another view of the CPU usage metrics Kibana collected:
-
-![cpu stress test results graph](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/cpu%20stress%20test%20results%20graph.png)
-
-
-#### Generate a high amount of web requests to both web servers and make sure that Kibana is picking them up.
 
 This time we will generate a high amount of web requests directed to one of my web servers. To do so, I will use `wget` to launch a DoS attack.
 
