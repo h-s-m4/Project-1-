@@ -65,8 +65,8 @@ A summary of the access policies in place can be found in the table below.
  
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump-Box-Provisioner | Yes      | <private IP>|
-| ELKServer      | Yes            | <private IP:5601|
+| Jump-Box-Provisioner | Yes      | 99.245.444.55
+| ELKServer      | Yes            | 99.245.444.55:5601|
 | DVWA 1   | No                  |  10.0.0.1-254        |
 | DVWA 2   | No                  |  10.0.0.1-254        |
 
@@ -138,7 +138,7 @@ We will configure an ELK server within virtual network. Specifically,
         sudo docker container list -a
      ``` 
    - ```bash
-        sudo docker start goofy_wright && sudo docker attach goofy_wright
+        sudo docker start sweet_grothendieck && sudo docker attach sweet_grothendieck
      ``` 
  
 ![connect_on_newVM](https://github.com/hibo-m/Project-1-/blob/main/sudo%20container%20list.PNG)  
