@@ -66,7 +66,7 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump-Box-Provisioner | Yes      | 99.245.444.55
-| ELKServer      | Yes            | 99.245.444.55:5601|
+| ELKServer      | Yes            | 99.245.444.55 :5601|
 | DVWA 1   | No                  |  10.0.0.1-254        |
 | DVWA 2   | No                  |  10.0.0.1-254        |
 
@@ -365,7 +365,7 @@ RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Fileb
  
 - RUN `ansible-playbook filebeat-playbook.yml`
 
-![Filebeat_playbook_result](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Filebeat_playbook_result.png)  
+![Filebeat_playbook_result](https://github.com/h-s-m4/Project-1-/blob/main/filbeat%20playbook.PNG)  
 
 Verify that our playbook is completed by navigate back to the Filebeat installation page on the ELK server GUI
 
