@@ -108,7 +108,7 @@ We will configure an ELK server within virtual network. Specifically,
  
 1. Create a new vNet located in the same resource group we have been using. 
 - Make sure this vNet is located in a new region and not the same region as our other VM's, which region we select is not important as long as it's a different US region than our other resources, we can also leave the rest of the settings at default.
-- In this example, that the IP Addressing has automatically created a new network space of 10.1.0.0/16. If our network is different (10.2.0.0 or 10.3.0.0) it is ok as long as we accept the default settings. Azure automatically creates a network that will work.
+	
 
 ![Create vNet](https://github.com/hibo-m/Project-1-/blob/main/elk%20project%2013.PNG)  
 
