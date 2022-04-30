@@ -424,18 +424,14 @@ RUN `nano metricbeat-playbook.yml` to enable the metricbeat service on boot by M
 
 Next, I want to verify that `filebeat` and `metricbeat` are actually collecting the data they are supposed to and that my deployment is fully functioning.
 
-
----
-
 To do so, I have implemented 3 tasks:
 
 Generate a high amount of failed SSH login attempts and verify that Kibana is picking up this activity.
 Generate a high amount of CPU usage on my web servers and verify that Kibana picks up this data.
 Generate a high amount of web requests to my web servers and make sure that Kibana is picking them up.
-Click here to view Using the Playbook.
 
-
-
+---
+### Click here to view Using the Playbook.
 
 
 
