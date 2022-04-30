@@ -368,8 +368,6 @@ RUN `nano filebeat-playbook.yml` to enable the filebeat service on boot by Fileb
 ![Filebeat_playbook_result](https://github.com/h-s-m4/Project-1-/blob/main/filbeat%20playbook.PNG)  
 
 Verify that our playbook is completed by navigate back to the Filebeat installation page on the ELK server GUI
-
-![Filebeat_playbook_verify](https://github.com/Diablo5G/ELK-Stack-Project/blob/main/Resources/Images/Filebeat_playbook_verify.png)
 	
 ![Filebeat_playbook_verify1](https://github.com/h-s-m4/Project-1-/blob/main/filebeat%20kibana.PNG)
 		
