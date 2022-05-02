@@ -453,7 +453,7 @@ Run the install-ELK playbook and navigate to the ELK server's Kibana webpage usi
 If everything runs as specified above, congratulations on your success!
 	
 
-![metricbeat kibana](![PeeringsELKtoRed](https://github.com/hibo-m/Project-1-/blob/main/elk%20peerings.PNG)
+![metricbeat kibana](https://github.com/h-s-m4/Project-1-/blob/main/metricbeat%20kibana.PNG)
 
   .
 
