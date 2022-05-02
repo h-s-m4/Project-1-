@@ -451,9 +451,10 @@ You should get an HTML code response on-screen. Next, navigate to the webservers
 Run the install-ELK playbook and navigate to the ELK server's Kibana webpage using the ELK server's public IP address at the following URL (http://20.27.168:5601/app/kibana#/home) to check that the installation worked as expected. You should see the Kibana homepage.
 
 If everything runs as specified above, congratulations on your success!
+	
 
+![metricbeat kibana](![PeeringsELKtoRed](https://github.com/hibo-m/Project-1-/blob/main/elk%20peerings.PNG)
 
-![metricbeat kibana] (https://github.com/h-s-m4/Project-1-/blob/main/metricbeat%20kibana.PNG0)
   .
 
    
