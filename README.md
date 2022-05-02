@@ -454,7 +454,6 @@ Run the install-ELK playbook and navigate to the ELK server's Kibana webpage usi
 
 ![metricbeat kibana](https://github.com/h-s-m4/Project-1-/blob/main/metricbeat%20kibana.PNG)
 
-![sample data kibana](https://github.com/h-s-m4/Project-1-/commit/ae4c2b67728a27d0795fe8b9216d896e2a0b51b1)
   
 
    
