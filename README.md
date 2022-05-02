@@ -436,7 +436,29 @@ To do so, I have implemented 3 tasks:
 <details>
 <summary> <b> Click here to view Using the Playbook. </b> </summary>
 
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 
+SSH into the control node and follow the steps below:
+
+Copy the configuration and playbook YAML files, to the /etc/ansible/files folder using:
+cp ./Resources/filebeat-config.yml /etc/ansible/files/filebeat-config.yml
+cp ./Resources/filebeat-play.yml /etc/ansible/files/filebeat-play.yml
+cp ./Resources/metricbeat-config.yml /etc/ansible/files/metricbeat-config.yml
+cp ./Resources/metricbeat-play.yml /etc/ansible/files/metricbeat-play.yml
+cp ./Resources/install-ELK.yml /etc/ansible/files/install-ELK.yml
+
+Update the filebeat-config and metricbeat-config files each to point towards the ELK server IP address, username and password. (10.2.0.4, elastic & changeme, respectively, for both config files)
+
+Update the /etc/ansible/hosts file with two separate sections for the private server IP addresses of the ELK server and the webservers on the internal network. (see above for IP addresses) configure two sections: [webservers] [elkservers]
+
+Run the filebeat and metricbeat playbooks, and ssh into each webserver (10.0.0.11, 10.0.0.12, and 10.0.0.5, respectively) and run "curl localhost/setup.php" to verify installation worked.
+enter: ssh azureuser@server-ip-address (replace "server-ip-address" with above IP addresses
+
+You should get an HTML code response on-screen. Next, navigate to the webservers via the load balancer's public IP address (52.146.47.175/setup.php) to check that the installation worked as expected.
+
+Run the install-ELK playbook and navigate to the ELK server's Kibana webpage using the ELK server's public IP address at the following URL (http://138.91.153.4:5601/app/kibana#/home) to check that the installation worked as expected. You should see the Kibana homepage.
+
+If everything runs as specified above, congratulations on your success!
 
 
 - 
