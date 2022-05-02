@@ -424,14 +424,6 @@ RUN `nano metricbeat-playbook.yml` to enable the metricbeat service on boot by M
 
 Next, I want to verify that `filebeat` and `metricbeat` are actually collecting the data they are supposed to and that my deployment is fully functioning.
 
-To do so, I have implemented 3 tasks:
-
--Generate a high amount of failed SSH login attempts and verify that Kibana is picking up this activity.
-	
--Generate a high amount of CPU usage on my web servers and verify that Kibana picks up this data.
-	
--Generate a high amount of web requests to my web servers and make sure that Kibana is picking them up.
-
 ---
 <details>
 <summary> <b> Click here to view Using the Playbook. </b> </summary>
@@ -451,12 +443,12 @@ Update the filebeat-config and metricbeat-config files each to point towards the
 
 Update the /etc/ansible/hosts file with two separate sections for the private server IP addresses of the ELK server and the webservers on the internal network. (see above for IP addresses) configure two sections: [webservers] [elkservers]
 
-Run the filebeat and metricbeat playbooks, and ssh into each webserver (10.0.0.11, 10.0.0.12, and 10.0.0.5, respectively) and run "curl localhost/setup.php" to verify installation worked.
+Run the filebeat and metricbeat playbooks, and ssh into each webserver (10.0.0.9, 10.0.0.10) and run "curl localhost/setup.php" to verify installation worked.
 enter: ssh azureuser@server-ip-address (replace "server-ip-address" with above IP addresses
 
-You should get an HTML code response on-screen. Next, navigate to the webservers via the load balancer's public IP address (52.146.47.175/setup.php) to check that the installation worked as expected.
+You should get an HTML code response on-screen. Next, navigate to the webservers via the load balancer's public IP address (91.474.29.175/setup.php) to check that the installation worked as expected.
 
-Run the install-ELK playbook and navigate to the ELK server's Kibana webpage using the ELK server's public IP address at the following URL (http://138.91.153.4:5601/app/kibana#/home) to check that the installation worked as expected. You should see the Kibana homepage.
+Run the install-ELK playbook and navigate to the ELK server's Kibana webpage using the ELK server's public IP address at the following URL (http://20.27.168:5601/app/kibana#/home) to check that the installation worked as expected. You should see the Kibana homepage.
 
 If everything runs as specified above, congratulations on your success!
 
